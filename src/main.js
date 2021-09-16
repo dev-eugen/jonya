@@ -4,4 +4,13 @@ import router from './router'
 import store from './store'
 import './assets/index.css'
 
-createApp(App).use(router).use(store).mount('#app')
+// global, utils, pluguins, helpers
+import global from "@/global"
+import helpers from "@/helpers"
+
+const app =  createApp(App).use(router).use(store)
+
+global(app)
+helpers(app)
+
+app.mount('#app')
