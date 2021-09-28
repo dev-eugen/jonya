@@ -1,9 +1,7 @@
-<template>
-  <div id="app" @dragover.prevent  @drop.prevent> 
-    <component  :is="layout">
-      <router-view />
-    </component>
-  </div>
+<template lang="pug">
+#app(@dragover.prevent @drop.prevent)
+  component(:is="layout")
+    router-view
 </template> 
 <!--<script setup>
     import { computed, getCurrentInstance } from 'vue'

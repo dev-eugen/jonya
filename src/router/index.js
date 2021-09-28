@@ -1,18 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import store from "@/store"
 
-const routes = [
-    {
-        path: '/',
-        name: 'Home',
-        component: () => import('/src/components/Home.vue'),
-        meta: {
-            layout: 'Side',
-            requreAuth: false,
-            permition: 'dashboard-view'
-        }
-    },
-]
+// * modules
+import dashboard from '@dashboard/router'
+import user from '@user/router'
+
+const routes = [ ...dashboard, ...user ]
 
 const router = createRouter({
     history: createWebHistory(),
